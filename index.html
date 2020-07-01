@@ -1,139 +1,149 @@
-<style>
-.top10{ padding-top: 10px;}
-.top20{ padding-top: 20px;}
-.top30{ padding-top: 30px;}
-.top40{ padding-top: 40px;}
-.top50{ padding-top: 50px;}
-.juzhong {
-    width: 1100px;
-    height: auto;
-    margin: 0 auto;
-    min-width: 1100px;
-}
-.clear {
-    clear: both;
-    height: 0px;
-    overflow: hidden;
-}
-/*清除左右浮动lpm*/
-.fl {
-    float: left;
-}
-/*定义左浮动lpm*/
-.fr {
-    float: right;
-}
-.case_bg{ background: #0462a0; padding: 50px 0;}
-.case_t{font-size: 14px; color: #fff; text-align: center;}
-.case_t p{ font-size: 26px; font-weight:bold; color: #fff; line-height: 60px; background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961394623429.jpg)no-repeat bottom center; margin-bottom: 10px;}
-.containerscoll {
-width: 1100px;
-position: relative;
-text-align: center;
-}
-#carousel {
-	width:1000px;
-	height:373px;
-	position:relative;
-	margin:0 auto;
-	clear:both;
-	overflow:hidden;
-	background-repeat: no-repeat;
-	border-radius: 15px;
-  }
-.u_ljt{ width:48px; height:48px; position: absolute; cursor:pointer;  display:block;}
-.u_ljt{top:155px;left:0px;}
-.u_rjt{ top:155px;right:0px; position: absolute; cursor:pointer;}
-.u_ljt a{ background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961395147996.png) no-repeat; width:48px; height:48px; display:block;}
-.u_rjt a{ background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961395147243.png) no-repeat; width:48px; height:48px; display:block;}
-.u_mid{ width:1080px;height: 310px; overflow:hidden;}
-.u_lst1 li{ width:512px; float:left; }
-.u_lst1 .lastli{ margin-right:0;}
-.u_lst1 li img{ width:512px; height:297px;display: block;border:3px solid #f0f0f0;}
-.u_lst1 a:hover{text-decoration: none;}
-</style>
-<script src="http://login.114my.cn/memberpic/dghbzscl/cssnew/jquery-1.7.2.min.js">
-</script>
-<div class="case_bg">
-	<div class="case juzhong">
-		<div class="case_t">
-			<p>
-				普莱特公司实景
-			</p>
-专业从事研发、生产和销售高精密行星减速机、高精度平台减速机
-		</div>
-		<div class="top30">
-		</div>
-		<div class="case_d">
-			<div class="dianmian">
-				<div class="containerscoll">
-					<div id="carousel" style="position:relative;">
-						<div>
-							<a href="https://v.youku.com/v_show/id_XNDczMjgxMTU0MA==.html" target="_blank"> <video src="fe17cbd53287cc5eb7550887a5939c24.mp4" width="637px" height="373px" controls="controls" id="item-2" class="carousel-center" style="display:inline;left:141px;top:-19px;visibility:visible;position:absolute;z-index:4;opacity:1;width:637px;height:373px;"></video></a> 
-						</div>
-						<div>
-							<a href="dgweb_content-717738.html" target="_blank"> <img src="http://aem5f5.2.magic2008.cn/uFile/95383/image/201961310322443.jpg" alt="" t="titlelink2" h="btn2" id="item-2" class="carousel-center" style="display: block; left: 181.5px; top: 0px; visibility: visible; position: absolute; z-index: 4; opacity: 1; width: 637px; height: 373px; overflow: hidden;"></a> 
-						</div>
-						<div>
-							<a href="dgweb_content-717739.html" target="_blank"> <img src="http://aem5f5.2.magic2008.cn/uFile/95383/image/201961310322443.jpg" alt="" t="titlelink2" h="btn2" id="item-2" class="" style="display: block; left: 497.05px; top: 55.95px; visibility: visible; position: absolute; z-index: 3; opacity: 1; width: 445.9px; height: 261.1px; overflow: hidden;"></a> 
-						</div>
-<!--<iframe id="ifv" style="z-index: 100;position: relative;" height="373px" width="637px" src="https://player.youku.com/embed/XNDczMjgxMTU0MA==" frameborder="0" 'allowfullscreen'="">
-							</iframe>-->
-								</div>
-								<div class="u_ljt">
-									<a href="javascript:" id="prev"></a> 
-								</div>
-								<div class="u_rjt">
-									<a href="javascript:" id="next"></a> 
-								</div>
-							</div>
-							<div class="clear">
-							</div>
-								</div>
-<script type="text/javascript">
- $(function () {
-        var carousel = $("#carousel").waterwheelCarousel({
-            flankingItems: 2,
-            movingToCenter: function ($item) {
-
-            },
-            movedToCenter: function ($item) {
-                $('.titlework').css({ 'opacity': '0', 'z-index': '8' });
-                $('.' + $item.attr('t')).css({ 'z-index': '99999' }).stop().animate({ 'opacity': '1' }, 500);
-                $('.' + $item.attr('h')).addClass("cur");
-            },
-            movingFromCenter: function ($item) {
-                $('.' + $item.attr('t')).css({ 'z-index': '8', 'opacity': '0' });
-                $('.' + $item.attr('h')).removeClass("cur");
-            },
-            movedFromCenter: function ($item) {
-                $('.' + $item.attr('t')).css({ 'z-index': '8', 'opacity': '0' });
-                $('.' + $item.attr('h')).removeClass("cur");
-            },
-
-            clickedCenter: function ($item) {
-            }
-        });
-        $('#prev').bind('click', function () {
-            carousel.prev();
-            return false
-        });
-
-        $('#next').bind('click', function () {
-            carousel.next();
-            return false;
-        });
-
-        $('#reload').bind('click', function () {
-            newOptions = eval("(" + $('#newoptions').val() + ")");
-            carousel.reload(newOptions);
-            return false;
-        });
-        $('.titlework:first').css({ 'opacity': '1', 'z-index': '99999' });
-        $('.bottom_roll:first').addClass("cur");
-    }); 
-</script>
-<script type="text/javascript" src="http://login.114my.cn/memberpic/dghbzscl/cssnew/scroll-div.js"></script>
-							</div>
-								</div>
-							</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top10{ padding-top: 10px;}
+        .top20{ padding-top: 20px;}
+        .top30{ padding-top: 30px;}
+        .top40{ padding-top: 40px;}
+        .top50{ padding-top: 50px;}
+        .juzhong {
+            width: 1100px;
+            height: auto;
+            margin: 0 auto;
+            min-width: 1100px;
+        }
+        .clear {
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+        }
+        /*清除左右浮动lpm*/
+        .fl {
+            float: left;
+        }
+        /*定义左浮动lpm*/
+        .fr {
+            float: right;
+        }
+        .case_bg{ background: #0462a0; padding: 50px 0;}
+        .case_t{font-size: 14px; color: #fff; text-align: center;}
+        .case_t p{ font-size: 26px; font-weight:bold; color: #fff; line-height: 60px; background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961394623429.jpg)no-repeat bottom center; margin-bottom: 10px;}
+        .containerscoll {
+        width: 1100px;
+        position: relative;
+        text-align: center;
+        }
+        #carousel {
+            width:1000px;
+            height:373px;
+            position:relative;
+            margin:0 auto;
+            clear:both;
+            overflow:hidden;
+            background-repeat: no-repeat;
+            border-radius: 15px;
+          }
+        .u_ljt{ width:48px; height:48px; position: absolute; cursor:pointer;  display:block;}
+        .u_ljt{top:155px;left:0px;}
+        .u_rjt{ top:155px;right:0px; position: absolute; cursor:pointer;}
+        .u_ljt a{ background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961395147996.png) no-repeat; width:48px; height:48px; display:block;}
+        .u_rjt a{ background: url(http://aem5f5.2.magic2008.cn/uFile/95383/image/201961395147243.png) no-repeat; width:48px; height:48px; display:block;}
+        .u_mid{ width:1080px;height: 310px; overflow:hidden;}
+        .u_lst1 li{ width:512px; float:left; }
+        .u_lst1 .lastli{ margin-right:0;}
+        .u_lst1 li img{ width:512px; height:297px;display: block;border:3px solid #f0f0f0;}
+        .u_lst1 a:hover{text-decoration: none;}
+        </style>
+        <script src="http://login.114my.cn/memberpic/dghbzscl/cssnew/jquery-1.7.2.min.js">
+        </script>
+</head>
+<body>
+    <div class="case_bg">
+        <div class="case juzhong">
+            <div class="case_t">
+                <p>
+                    普莱特公司实景
+                </p>
+    专业从事研发、生产和销售高精密行星减速机、高精度平台减速机
+            </div>
+            <div class="top30">
+            </div>
+            <div class="case_d">
+                <div class="dianmian">
+                    <div class="containerscoll">
+                        <div id="carousel" style="position:relative;">
+                            <div>
+                                <a href="https://v.youku.com/v_show/id_XNDczMjgxMTU0MA==.html" target="_blank"> <video src="fe17cbd53287cc5eb7550887a5939c24.mp4" width="637px" height="373px" controls="controls" id="item-2" class="carousel-center" style="display:inline;left:141px;top:-19px;visibility:visible;position:absolute;z-index:4;opacity:1;width:637px;height:373px;"></video></a> 
+                            </div>
+                            <div>
+                                <a href="dgweb_content-717738.html" target="_blank"> <img src="http://aem5f5.2.magic2008.cn/uFile/95383/image/201961310322443.jpg" alt="" t="titlelink2" h="btn2" id="item-2" class="carousel-center" style="display: block; left: 181.5px; top: 0px; visibility: visible; position: absolute; z-index: 4; opacity: 1; width: 637px; height: 373px; overflow: hidden;"></a> 
+                            </div>
+                            <div>
+                                <a href="dgweb_content-717739.html" target="_blank"> <img src="http://aem5f5.2.magic2008.cn/uFile/95383/image/201961310322443.jpg" alt="" t="titlelink2" h="btn2" id="item-2" class="" style="display: block; left: 497.05px; top: 55.95px; visibility: visible; position: absolute; z-index: 3; opacity: 1; width: 445.9px; height: 261.1px; overflow: hidden;"></a> 
+                            </div>
+    <!--<iframe id="ifv" style="z-index: 100;position: relative;" height="373px" width="637px" src="https://player.youku.com/embed/XNDczMjgxMTU0MA==" frameborder="0" 'allowfullscreen'="">
+                                </iframe>-->
+                                    </div>
+                                    <div class="u_ljt">
+                                        <a href="javascript:" id="prev"></a> 
+                                    </div>
+                                    <div class="u_rjt">
+                                        <a href="javascript:" id="next"></a> 
+                                    </div>
+                                </div>
+                                <div class="clear">
+                                </div>
+                                    </div>
+    <script type="text/javascript">
+     $(function () {
+            var carousel = $("#carousel").waterwheelCarousel({
+                flankingItems: 2,
+                movingToCenter: function ($item) {
+    
+                },
+                movedToCenter: function ($item) {
+                    $('.titlework').css({ 'opacity': '0', 'z-index': '8' });
+                    $('.' + $item.attr('t')).css({ 'z-index': '99999' }).stop().animate({ 'opacity': '1' }, 500);
+                    $('.' + $item.attr('h')).addClass("cur");
+                },
+                movingFromCenter: function ($item) {
+                    $('.' + $item.attr('t')).css({ 'z-index': '8', 'opacity': '0' });
+                    $('.' + $item.attr('h')).removeClass("cur");
+                },
+                movedFromCenter: function ($item) {
+                    $('.' + $item.attr('t')).css({ 'z-index': '8', 'opacity': '0' });
+                    $('.' + $item.attr('h')).removeClass("cur");
+                },
+    
+                clickedCenter: function ($item) {
+                }
+            });
+            $('#prev').bind('click', function () {
+                carousel.prev();
+                return false
+            });
+    
+            $('#next').bind('click', function () {
+                carousel.next();
+                return false;
+            });
+    
+            $('#reload').bind('click', function () {
+                newOptions = eval("(" + $('#newoptions').val() + ")");
+                carousel.reload(newOptions);
+                return false;
+            });
+            $('.titlework:first').css({ 'opacity': '1', 'z-index': '99999' });
+            $('.bottom_roll:first').addClass("cur");
+        }); 
+    </script>
+    <script type="text/javascript" src="http://login.114my.cn/memberpic/dghbzscl/cssnew/scroll-div.js"></script>
+                                </div>
+                                    </div>
+                                </div> 
+</body>
+</html> 
